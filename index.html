@@ -1,15 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.sass">
-    <title>Vite App</title>
+    <title>music player</title>
+    <meta name="description" content="muscic player web app" />
+    <link rel="stylesheet" href="style.sass" />
   </head>
   <body>
-    <div id="app">
-      <h1>hello</h1>
+    <div id="mplayer" class="mplayer">
+      <h1 class="sr-only">music player</h1>
+      <div class="mplayer__wraper">
+        <div class="mplayer__panel" role="region" aria-labelledby="playlist">
+          <header class="mplayer__header">
+            <div class="mplayer__headline-wrap">
+              <img src="assets/icons/queue-list.svg" alt="playlist icon" />
+              <h2 id="playlist" class="mplayer__title">playlist</h2>
+            </div>
+            <p>songs: 200</p>
+          </header>
+          <div>
+            <label for="filter-song" class="sr-only">filter song</label>
+            <input id="filter-song" type="text" placeholder="fliter song" />
+          </div>
+          <ul class="mplayer__playlist" aria-label="song-list">
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="summer rain" class="mplayer__song-title">
+                  summer rain
+                </h3>
+                <p class="mplayer__musican">le parody, gizmo varillas</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="dreams" class="mplayer__song-title">dreams</h3>
+                <p class="mplayer__musican">solange</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="witchoo" class="mplayer__song-title">witchoo</h3>
+                <p class="mplayer__musican">Durand Jones</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="que sera" class="mplayer__song-title">que sera</h3>
+                <p class="mplayer__musican">wax tailor</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="solitaire" class="mplayer__song-title">solitaire</h3>
+                <p class="mplayer__musican">olivia stone</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+            <li class="mplayer__song">
+              <div class="mplayer__song-wraper">
+                <h3 title="vitamin c" class="mplayer__song-title">vitamin c</h3>
+                <p class="mplayer__musican">conducta</p>
+              </div>
+              <img src="" alt="" class="mplayer__song-cover" />
+              <!--content-->
+            </li>
+          </ul>
+        </div>
+        <div class="mplayer__panel" role="region" aria-labelledby="">
+          <nav class="mplayer__header">
+            <ul>
+              <li>
+                <button id="btn-playlist" title="toggle playlist" aria-label="toggle playlist">
+                  <img src="assets/icons/queue-list.svg" alt="playlist icon" />
+                </button>
+              </li>
+              <li class="mplayer__headline-wrap">
+                <img
+                  src="assets/icons/speaker-low.svg"
+                  alt="low volume speaker"
+                  class="mplayer__header-img"
+                />
+                <!-- <label for="input-volume" class="sr-only">volume at {{ volumeRange }}%</label> -->
+                <input
+                  id="input-volume"
+                  type="range"
+                  class="mplayer__song-bar"
+                />
+                <img
+                  src="assets/icons/speaker-high.svg"
+                  alt="volume 100%"
+                  class="mplayer__header-img"
+                />
+              </li>
+              <li>
+                <button
+                  id="btn-playlist"
+                  aria-label="toggle informations and settings"
+                >
+                  <img
+                    class="mplayer__button-image"
+                    src="assets/icons/info.svg"
+                    alt="info icon"
+                  />
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div
+          class="mplayer__panel"
+          role="region"
+          aria-labelledby="info-settings"
+        >
+          <header class="mplayer__header">
+            <div class="mplayer__headline-wrap">
+              <img src="assets/icons/info.svg" alt="informatopn icon" />
+              <h2 id="info-settings" class="mplayer__title">info / settings</h2>
+            </div>
+          </header>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
