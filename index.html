@@ -14,7 +14,7 @@
         <div class="mplayer__panel" role="region" aria-labelledby="playlist">
           <header class="mplayer__header">
             <div class="mplayer__headline-wrap">
-              <img src="assets/icons/queue-list.svg" alt="playlist icon" />
+              <img src="assets/icons/queue-list.svg" alt="playlist icon" class="icon"/>
               <h2 id="playlist" class="mplayer__title">playlist</h2>
             </div>
             <p>songs: 200</p>
@@ -77,18 +77,18 @@
           </ul>
         </div>
         <div class="mplayer__panel" role="region" aria-labelledby="">
-          <nav class="mplayer__header">
-            <ul>
+          <nav>
+            <ul class="mplayer__header">
               <li>
                 <button id="btn-playlist" title="toggle playlist" aria-label="toggle playlist">
-                  <img src="assets/icons/queue-list.svg" alt="playlist icon" />
+                  <img src="assets/icons/queue-list.svg" alt="playlist icon" class="icon"/>
                 </button>
               </li>
               <li class="mplayer__headline-wrap">
                 <img
                   src="assets/icons/speaker-low.svg"
                   alt="low volume speaker"
-                  class="mplayer__header-img"
+                  class="icon"
                 />
                 <!-- <label for="input-volume" class="sr-only">volume at {{ volumeRange }}%</label> -->
                 <input
@@ -99,7 +99,7 @@
                 <img
                   src="assets/icons/speaker-high.svg"
                   alt="volume 100%"
-                  class="mplayer__header-img"
+                  class="icon"
                 />
               </li>
               <li>
@@ -108,9 +108,9 @@
                   aria-label="toggle informations and settings"
                 >
                   <img
-                    class="mplayer__button-image"
+                    class="icon"
                     src="assets/icons/info.svg"
-                    alt="info icon"
+                    alt="informations and settings"
                   />
                 </button>
               </li>
@@ -124,7 +124,7 @@
         >
           <header class="mplayer__header">
             <div class="mplayer__headline-wrap">
-              <img src="assets/icons/info.svg" alt="informatopn icon" />
+              <img src="assets/icons/info.svg" alt="informatopn icon" class="icon" />
               <h2 id="info-settings" class="mplayer__title">info / settings</h2>
             </div>
           </header>

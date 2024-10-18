@@ -3,38 +3,60 @@
 
 /**************************************** custom properties ****************************************/
 :root
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+  line-height: 1
+  font-weight: 400
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /*********** colours & gradients ***********/
+  --gradient-01: radial-gradient(circle, #3652e2 0%, #dc3d5d 100%)
+  --gradient-02: linear-gradient(315deg, #3362c7 0%, #5a61e1 68%, rgba(120,87,208,1) 98%)
+  --sdw-light: 0px 3px 25px -11px rgba(0,0,0,0.99)
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --clr-primary-01: rgba(255, 255, 255, 0.99)
+  --clr-primary-02: rgba(175, 175, 175, 0.99)
+  
+  color-scheme: light dark
+  color: rgba(255, 255, 255, 0.87)
+  background-color: #242424
+
+  font-synthesis: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 body
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0
+  display: flex
+  place-items: center
+  min-width: 320px
+  min-height: 100vh
+  background: var(--gradient-01)
 
 h1
-  font-size: 3.2em;
-  line-height: 1.1;
-
+  font-size: 3.2em
+  line-height: 1.1
 
 .mplayer 
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px
+  margin: 0 auto
+  padding: 2rem
 
+  display: flex
+  justify-content: center
+  align-items: center
+
+  text-align: center
+
+  &__wraper
+    display: flex
+  &__panel
+    background: var(--gradient-02)
+    box-shadow: var(--sdw-light)
+  &__header
+    display: flex
+
+.icon
+  fill: var(--clr-primary-01)
 
 .sr-only
-  visibility: hidden
-  
+  display: none
