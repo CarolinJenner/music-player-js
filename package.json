@@ -1,15 +1,17 @@
 {
   "name": "music-player",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "svg": "node svg-sprite.cjs",
     "preview": "vite preview"
   },
   "devDependencies": {
     "sass-embedded": "^1.79.5",
+    "svg-sprite": "^2.0.4",
     "vite": "^5.4.8"
   }
 }

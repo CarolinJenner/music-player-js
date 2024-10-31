@@ -3,60 +3,148 @@
 
 /**************************************** custom properties ****************************************/
 :root
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
-  line-height: 1
-  font-weight: 400
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+	line-height: 1
+	font-weight: 400
 
-  /*********** colours & gradients ***********/
-  --gradient-01: radial-gradient(circle, #3652e2 0%, #dc3d5d 100%)
-  --gradient-02: linear-gradient(315deg, #3362c7 0%, #5a61e1 68%, rgba(120,87,208,1) 98%)
-  --sdw-light: 0px 3px 25px -11px rgba(0,0,0,0.99)
+	/*********** colours & gradients ***********/
+	--gradient-01: radial-gradient(circle, #3652e2 0%, #e85371 100%)
+	--gradient-02: linear-gradient(336deg, rgba(70, 70, 70, 0.4) 0%, rgba(82,82,82,0.5) 59%, rgba(112, 112, 112, 0.3) 84%)
+	--gradient-03: linear-gradient(336deg, #015bd2 0%, #2b239c 53%, rgba(83,46,183,1) 78%, #795dc6 100%)
+	--sdw-light: 0px 3px 25px -11px rgba(0,0,0,0.99)
 
-  --clr-primary-01: rgba(255, 255, 255, 0.99)
-  --clr-primary-02: rgba(175, 175, 175, 0.99)
-  
-  color-scheme: light dark
-  color: rgba(255, 255, 255, 0.87)
-  background-color: #242424
+	--clr-primary-01: rgb(255, 255, 255)
+	--clr-primary-02: rgba(255, 255, 255, 0.516)
+	
+	color-scheme: light dark
+	color: rgba(255, 255, 255, 0.87)
+	background-color: #242424
 
-  font-synthesis: none
-  text-rendering: optimizeLegibility
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
+	font-synthesis: none
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
 
 body
-  margin: 0
-  display: flex
-  place-items: center
-  min-width: 320px
-  min-height: 100vh
-  background: var(--gradient-01)
+	background: var(--gradient-01)
+
+	min-height: 100vh
+	@media screen and (width>=550px)
+		place-items: center
+		display: flex
+		place-items: center
 
 h1
-  font-size: 3.2em
-  line-height: 1.1
+	font-size: 3.2em
+	line-height: 1.1
 
 .mplayer 
-  max-width: 1280px
-  margin: 0 auto
-  padding: 2rem
+	width: 90%
+	margin: 0 auto
 
-  display: flex
-  justify-content: center
-  align-items: center
+	display: flex
+	justify-content: center
+	
+	@media screen and (width>=550px)
+		
+	&__wrapper
+		margin-block-start: 0.5rem 
+		width: 85dvw
 
-  text-align: center
+		background: var(--gradient-02)
+		overflow: clip
+		box-shadow: var(--sdw-light)
+		border-radius: .5rem
+		@media screen and (width>=550px)
+			width: clamp(200px, 250px, 600px)
 
-  &__wraper
-    display: flex
-  &__panel
-    background: var(--gradient-02)
-    box-shadow: var(--sdw-light)
-  &__header
-    display: flex
+	&__player
+		padding: 0 1rem 2rem 1rem
+		
+		border-image: var(--gradient-03)
+		border-image-slice: 44
+		border-width: 0.4rem
+		border-style: solid none none none
+		text-align: center
+
+	&__panel
+
+	&__navigation
+		width: 100%
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+	&__headline-wrap
+		display: flex
+		flex-direction: row
+
+	&__song-cover
+		margin: 1.5rem auto
+		border-radius: 50%
+
+	&__current-song-title
+		font-size: 1.5rem
+		font-weight: 800
+
+	&__current-song-artist
+		font-size: .9rem
+		color: var(--clr-primary-02)
+		text-decoration: none
+		&:hover
+			color: var(--clr-primary-01)
+		
+	&__duration
+		display: flex
+		justify-content: space-between
+		&-bar
 
 .icon
-  fill: var(--clr-primary-01)
+	display: inline-block
+	position: relative
+	width: 22px
+	height: auto
+	color: var(--clr-primary-01)
 
+	&__sprite
+		border: 0 !important
+		clip: rect(0 0 0 0) !important
+		height: 1px !important
+		margin: -1px !important
+		overflow: hidden !important
+		padding: 0 !important
+		position: absolute !important
+		width: 1px !important
+	&__inner
+		display: block
+		position: relative
+		padding-top: 100% !important // korrigiert die nicht auf einem quadratischen Canvas liegenden Icons
+
+	svg
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+
+		use
+			fill: currentColor
 .sr-only
-  display: none
+	display: none
+
+	/*
+		für seitliche Panels:
+			web - aufklappen
+			mobile - überlappen + Animation
+		- [ ] input range stylen
+		- [ ] current song title anmation,wenn zu lang & overflow clip
+		- [ ] Flexbox durration values
+		- [ ] Abstände vertical
+		- [ ] button stylings (insb. play)
+		- [ ] ggf ratio anpassen
+		*****************************************
+		&:focus
+			padding: .1rem .3rem
+			background-image: var(--gradient-03)
+			border-radius: .3rem
+		*/
